@@ -1,13 +1,16 @@
 import streamlit as st
 from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-import os
+# import os
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import google.generativeai as genai
 from langchain.vectorstores import FAISS
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
+import time
+import numpy as np
+import pandas as pd
 
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
@@ -44,19 +47,24 @@ def get_conversational_chain(temperature = 0.5):
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
     return chain
 
+def stream_data(response):
+    for word in response.split(" "):
+        yield word + " "
+        time.sleep(0.02)
+
 def user_input(user_question,temperature):
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
     
     new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
     docs = new_db.similarity_search(user_question)
 
-    chain = get_conversational_chain()
+    chain = get_conversational_chain(temperature)
 
     
     response = chain(
         {"input_documents":docs, "question": user_question}
         , return_only_outputs=True)
-
-    print(response)
-    st.write("Reply: ", response["output_text"])
+    
+    with st.chat_message("assistant"):
+            st.write_stream(stream_data(response["output_text"]))
     
