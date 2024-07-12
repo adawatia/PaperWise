@@ -8,9 +8,6 @@ from langchain.vectorstores import FAISS
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
-# from dotenv import load_dotenv
-
-# load_dotenv()
 
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
@@ -61,5 +58,5 @@ def user_input(user_question,temperature):
         , return_only_outputs=True)
 
     print(response)
-    st.write_str("Reply: ", response["output_text"])
+    st.write("Reply: ", response["output_text"])
     
