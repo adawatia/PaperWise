@@ -1,4 +1,4 @@
 # PDFChatterbox 🤖
-[click here](https://pdfchatterbox.streamlit.app/)
+[Link to ChatterPDF](https://pdfchatterbox.streamlit.app/)
 ## BackEND Done
 
