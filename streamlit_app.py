@@ -6,10 +6,11 @@ import backend
 def main():
     st.set_page_config(page_title="ChatterPDF", page_icon="📄", layout="wide", initial_sidebar_state="auto")
     
-    st.header("ChatterPDF: Ask Questions from PDF Files")
+    st.header("ChatterPDF📦: Ask Questions from PDF Files")
     if "messages" not in st.session_state:
         st.session_state.messages = []
-        
+    
+    # Session state
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
@@ -17,7 +18,6 @@ def main():
     if user_question := st.chat_input(placeholder="Ask a Question from the PDF Files"):
         with st.chat_message("user"):
             st.write(user_question)
-    
     
     temperature = 0.50
     
@@ -36,7 +36,6 @@ def main():
         st.divider()
         with st.popover("Advanced Settings"):
             temperature = st.slider("Temperature", 0.0, 1.0, 0.5)
-
-
+    
 if __name__ == "__main__":
     main()
