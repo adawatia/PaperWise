@@ -1,50 +1,76 @@
-# PaperWise 📚
+# 📚 PaperWise - Intelligent PDF Assistant  
 
-## Conveys a sense of smart, insightful reading and comprehension.
-
-**PaperWise** is an intelligent tool designed to help you interact with and extract insights from PDF documents seamlessly. Whether you need to ask questions, summarize content, or analyze information, PaperWise provides a smooth and efficient experience.
+PaperWise is an AI-powered PDF assistant that enables smart interaction with documents. It allows users to extract insights, ask questions, and summarize content efficiently while running offline with **Ollama**.
 
 ---
 
-## 🚀 Features
+## 🚀 Features  
 
-✅ **Smart Q&A:** Ask questions and get precise answers from PDFs.  
-✅ **Summarization:** Generate concise summaries of lengthy documents.  
-✅ **Search & Extract:** Quickly find relevant information from large PDFs.  
-✅ **User-Friendly Interface:** Simple and intuitive UI powered by Streamlit.  
-✅ **Fast Processing:** Optimized for efficiency and speed.  
-✅ **Self-Hosted & Offline:** Runs entirely on your machine without requiring an internet connection.  
-
----
-
-## 🛠️ Built With
-
-- **Python** 🐍 - Core programming language.  
-- **PySide6** 🎨 - For an interactive and responsive UI.  
-- **PyMuPDF / PDFPlumber** 📄 - PDF parsing and text extraction.  
-- **LangChain / OpenAI / LLMs** 🤖 - AI-driven text processing (if applicable).  
-- **Ollama** 🖥️ - Enables running large language models locally for offline use.  
+✅ **Smart Q&A:** Extract relevant answers from PDFs  
+✅ **Summarization:** Get concise summaries of lengthy documents  
+✅ **Local & Offline:** Powered by Ollama for privacy and security  
+✅ **User-Friendly UI:** Built with PySide6 for a smooth experience  
+✅ **Efficient Processing:** Uses PyMuPDF for fast text extraction  
 
 ---
 
-## 🔧 Installation
+## 🛠️ Tech Stack  
 
-Follow these steps to set up PaperWise on your local machine:
+- **Python** 🐍 - Core programming language  
+- **PySide6** 🎨 - GUI framework for a responsive UI  
+- **Ollama** 🤖 - Runs large language models locally  
+- **PyMuPDF** 📄 - PDF parsing and text extraction  
+- **Requests** 🔗 - API communication and network operations  
+
+---
+
+## 📂 Project Structure  
+
+```
+paperwise/
+│
+├── main.py                     # Application entry point
+├── requirements.txt            # Dependencies list
+│
+├── paperwise/                  # Main package
+│   ├── core/                   # Core functionality 
+│   │   ├── pdf_processor.py    # PDF loading and text extraction
+│   │   ├── query_processor.py  # Query handling and context retrieval
+│   │   └── ollama_interface.py # LLM interaction via Ollama
+│   │
+│   ├── ui/                     # User interface components
+│   │   ├── main_window.py      # Main application window
+│   │   ├── pdf_viewer.py       # PDF viewing component
+│   │   ├── query_panel.py      # Query input and response display
+│   │   └── document_list.py    # Document management sidebar
+│   │
+│   └── utils/                  # Utility functions
+│       ├── text_chunking.py    # Text chunking algorithms
+│       └── config.py           # Application configuration
+│
+├── resources/                  # UI resources (icons, styles)
+├── tests/                      # Unit and integration tests
+└── document_storage/           # Default storage location for processed documents
+```
+
+---
+
+## 🔧 Installation  
 
 1️⃣ **Clone the repository:**  
 ```bash
-git clone https://github.com/your-repo/PaperWise.git
+git clone https://github.com/adawatia/PaperWise.git
 cd PaperWise
 ```
 
-2️⃣ **Install UV on your system:**  
+2️⃣ **Set up a virtual environment:**  
 ```bash
 uv venv --python 3.13
 ```
 
-3️⃣ **Install Ollama for offline AI processing:**  
+3️⃣ **Install dependencies:**  
 ```bash
-# Follow Ollama's official installation guide
+uv pip install -r requirements.txt
 ```
 
 4️⃣ **Run the application:**  
@@ -54,27 +80,27 @@ uv run main.py
 
 ---
 
-## 🚧 Updates in Progress
+## 🚀 Upcoming Features  
 
-🛠️ **Upcoming Features:**  
 🔹 Multi-document support  
 🔹 Advanced AI-based summarization  
 🔹 OCR for scanned PDFs  
 🔹 Enhanced UI/UX improvements  
 
-Stay tuned for more updates! 🚀
+---
+
+## 🤝 Contributing  
+
+We welcome contributions! Feel free to submit pull requests, report issues, or suggest new features.
 
 ---
 
-## 🤝 Contributing
-We welcome contributions! If you'd like to improve PaperWise, feel free to submit pull requests, report issues, or suggest new features.
+## 📜 License  
+
+This project is licensed under the **MIT License**.  
 
 ---
 
-## 📜 License
-This project is licensed under the **MIT License**.
+⭐ If you find **PaperWise** useful, give it a **star** on GitHub! 🚀  
 
 ---
-
-⭐ If you like PaperWise, don't forget to **star** this repo on GitHub!
-
