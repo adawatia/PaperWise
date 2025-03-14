@@ -20,7 +20,7 @@
 ## 🛠️ Built With
 
 - **Python** 🐍 - Core programming language.  
-- **Streamlit** 🎨 - For an interactive and responsive UI.  
+- **PySide6** 🎨 - For an interactive and responsive UI.  
 - **PyMuPDF / PDFPlumber** 📄 - PDF parsing and text extraction.  
 - **LangChain / OpenAI / LLMs** 🤖 - AI-driven text processing (if applicable).  
 - **Ollama** 🖥️ - Enables running large language models locally for offline use.  
