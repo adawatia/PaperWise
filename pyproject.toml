@@ -1,0 +1,16 @@
+[project]
+name = "paperwise"
+version = "0.1.0"
+description = " Conveys a sense of smart, insightful reading and comprehension."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "faiss-cpu>=1.10.0",
+    "google-generativeai>=0.8.4",
+    "langchain>=0.3.20",
+    "langchain-community>=0.3.19",
+    "langchain-google-genai>=2.0.10",
+    "pypdf2>=3.0.1",
+    "python-dotenv>=1.0.1",
+    "streamlit>=1.43.2",
+]
