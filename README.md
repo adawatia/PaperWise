@@ -13,6 +13,7 @@
 ✅ **Search & Extract:** Quickly find relevant information from large PDFs.  
 ✅ **User-Friendly Interface:** Simple and intuitive UI powered by Streamlit.  
 ✅ **Fast Processing:** Optimized for efficiency and speed.  
+✅ **Self-Hosted & Offline:** Runs entirely on your machine without requiring an internet connection.  
 
 ---
 
@@ -22,6 +23,7 @@
 - **Streamlit** 🎨 - For an interactive and responsive UI.  
 - **PyMuPDF / PDFPlumber** 📄 - PDF parsing and text extraction.  
 - **LangChain / OpenAI / LLMs** 🤖 - AI-driven text processing (if applicable).  
+- **Ollama** 🖥️ - Enables running large language models locally for offline use.  
 
 ---
 
@@ -40,7 +42,12 @@ cd PaperWise
 uv venv --python 3.13
 ```
 
-3️⃣ **Run the application:**  
+3️⃣ **Install Ollama for offline AI processing:**  
+```bash
+# Follow Ollama's official installation guide
+```
+
+4️⃣ **Run the application:**  
 ```bash
 uv run main.py
 ```
