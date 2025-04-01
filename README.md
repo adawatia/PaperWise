@@ -7,7 +7,7 @@
 [![Issues](https://img.shields.io/github/issues/adawatia/PaperWise)](https://github.com/adawatia/PaperWise/issues)
 [![Stars](https://img.shields.io/github/stars/adawatia/PaperWise)](https://github.com/adawatia/PaperWise/stargazers)
 
-PaperWise is an AI-powered PDF assistant that enables smart interaction with documents. It allows users to extract insights, ask questions, and summarize content efficiently while running completely offline with **Ollama**.
+PaperWise is an AI-powered PDF assistant that enables smart interaction with documents. It allows users to extract insights, ask questions, and summarize content efficiently while running completely offline with **GPT4All**.
 
 ## ✨ Key Features
 
@@ -21,7 +21,7 @@ PaperWise is an AI-powered PDF assistant that enables smart interaction with doc
 
 - **Python** 🐍 - Core programming language
 - **Flet** 🎨 - GUI framework *(Flutter Wrapper)* for a responsive UI
-- **Ollama** 🤖 - Runs large language models locally
+- **GPT4All** 🤖 - Runs large language models locally
 - **PyMuPDF** 📄 - PDF parsing and text extraction
 - **Requests** 🔗 - API communication and network operations
 
