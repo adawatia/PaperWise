@@ -2,29 +2,32 @@
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Flet](https://img.shields.io/badge/Flet-Latest-purple.svg)](https://flet.dev/)
-[![GPT4All](https://img.shields.io/badge/GPT4All-Powered-orange.svg)](https://gpt4all.io/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Latest-red.svg)](https://streamlit.io/)
+[![Free LLM](https://img.shields.io/badge/Free%20LLM-APIs-orange.svg)](https://github.com/adawatia/PaperWise)
 [![Issues](https://img.shields.io/github/issues/adawatia/PaperWise)](https://github.com/adawatia/PaperWise/issues)
 [![Stars](https://img.shields.io/github/stars/adawatia/PaperWise)](https://github.com/adawatia/PaperWise/stargazers)
 
 > Transform your PDF documents into interactive conversations with AI
 
-PaperWise is a privacy-first, offline AI assistant that revolutionizes how you interact with PDF documents. Ask questions, generate summaries, and extract insights from your documents - all while keeping your data completely private on your local machine.
+
+**Disclaimer**: This project is built by a daily learner. Expect bugs, incomplete features, and ongoing improvements. Use at your own discretion and feel free to contribute!
+
+PaperWise is an intelligent PDF assistant that revolutionizes how you interact with PDF documents. Ask questions, generate summaries, and extract insights from your documents using free LLM APIs.
 
 ## ✨ Why Choose PaperWise?
 
-🔒 **100% Privacy** - Your documents never leave your computer  
-🚀 **Lightning Fast** - Local processing with no internet dependency  
+🆓 **Free LLM APIs** - Leverages free language model APIs for AI functionality  
+🚀 **Lightning Fast** - Streamlit-powered web interface for smooth interactions  
 💬 **Natural Conversations** - Chat with your PDFs like talking to an expert  
 📊 **Smart Insights** - Extract key information and generate summaries  
-🎨 **Beautiful Interface** - Modern, intuitive design built with Flet  
+🎨 **Beautiful Interface** - Modern, intuitive design built with Streamlit  
 🌍 **Cross-Platform** - Works seamlessly on Windows, macOS, and Linux  
 
 ## 🛠️ Tech Stack
 
 - **Python 3.8+** 🐍 - Robust backend processing
-- **Flet** 🎨 - Modern GUI framework (Flutter-powered)
-- **GPT4All** 🤖 - Local AI inference engine
+- **Streamlit** 🎨 - Modern web-based UI framework
+- **Free LLM APIs** 🤖 - AI inference through free API services
 - **PyMuPDF** 📄 - Advanced PDF parsing and text extraction
 - **Sentence Transformers** 🔍 - Semantic search and embeddings
 
@@ -33,8 +36,8 @@ PaperWise is a privacy-first, offline AI assistant that revolutionizes how you i
 ### Prerequisites
 
 - **Python 3.8+** installed on your system
-- **8GB+ RAM** recommended for optimal performance
-- **2GB+ free disk space** for AI models
+- **4GB+ RAM** recommended for optimal performance
+- **Internet connection** for LLM API access
 
 ### Installation
 
@@ -66,17 +69,17 @@ PaperWise is a privacy-first, offline AI assistant that revolutionizes how you i
 
 4. **Launch PaperWise**
    ```bash
-   python main.py
+   streamlit run main.py
    ```
 
 ## 📖 How to Use
 
 1. **📁 Load Your PDF**
-   - Click "Open PDF" and select your document
+   - Upload your PDF document through the Streamlit interface
    - Wait for processing to complete
 
 2. **💬 Start Chatting**
-   - Type questions about your document
+   - Type questions about your document in the chat interface
    - Ask for summaries of specific sections
    - Request key insights and analysis
 
@@ -90,81 +93,58 @@ PaperWise is a privacy-first, offline AI assistant that revolutionizes how you i
 
 ```
 paperwise/
-├── main.py                 # Application entry point
+├── main.py                 # Streamlit application entry point
 ├── requirements.txt        # Python dependencies
 ├── README.md              # Project documentation
 ├── LICENSE                # MIT license file
-├── src/                   # Source code
-│   ├── ui/               # User interface components
-│   │   ├── __init__.py
-│   │   └── main_window.py
-│   ├── pdf/              # PDF processing logic
-│   │   ├── __init__.py
-│   │   ├── parser.py     # PDF text extraction
-│   │   └── processor.py  # Text preprocessing
-│   ├── ai/               # AI integration
-│   │   ├── __init__.py
-│   │   ├── gpt4all_client.py  # GPT4All interface
-│   │   └── embeddings.py      # Text embeddings
-│   └── utils/            # Utility functions
-│       ├── __init__.py
-│       └── helpers.py
-├── assets/               # Static resources
-│   ├── icons/
-│   └── fonts/
-├── models/              # Downloaded AI models (auto-created)
-├── tests/               # Unit tests
-│   ├── __init__.py
-│   ├── test_pdf.py
-│   └── test_ai.py
-└── docs/                # Additional documentation
-    └── API.md
 ```
 
 ## ⚙️ Configuration
 
-### AI Model Selection
+### LLM API Configuration
+**⚠️ Upcoming...**
 
-PaperWise automatically downloads and uses the best available model for your system. You can customize the model in `src/ai/gpt4all_client.py`:
+PaperWise uses free LLM APIs for AI functionality. Configure your preferred API in `src/ai/llm_client.py`:
 
 ```python
-# Recommended models (in order of preference)
-MODELS = [
-    "mistral-7b-openorca.Q4_0.gguf",    # Balanced performance
-    "orca-mini-3b.gguf",                # Faster, less accurate
-    "wizardlm-13b-v1.2.Q4_0.gguf"      # Higher accuracy, slower
+# Supported free LLM APIs
+SUPPORTED_APIS = [
+    "huggingface",      # Hugging Face Inference API
+    "together",         # Together AI (free tier)
+    "replicate",        # Replicate (free tier)
 ]
 ```
 
 ### Performance Tuning
 
-- **RAM Usage**: Models range from 2GB (3B parameters) to 8GB+ (13B+ parameters)
-- **Processing Speed**: Smaller models respond faster but may be less accurate
-- **Quality**: Larger models provide better understanding and responses
+- **Response Time**: Depends on API provider and internet connection
+- **Rate Limits**: Respect free tier limitations of chosen API
+- **Quality**: Different APIs provide varying response quality
 
 ## 🔧 Troubleshooting
 
 ### Common Issues
 
-**Q: Application starts slowly**  
-A: First launch downloads AI models (~2-4GB). Subsequent starts are much faster.
+**Q: Application loads slowly**  
+A: Check your internet connection and API response times.
 
-**Q: Out of memory errors**  
-A: Try a smaller model or close other applications to free up RAM.
+**Q: API rate limit errors**  
+A: Wait for the rate limit to reset or try a different free API provider.
 
 **Q: PDF not loading**  
 A: Ensure the PDF isn't password-protected or corrupted. Scanned PDFs may need OCR.
 
 **Q: Responses seem inaccurate**  
-A: Try rephrasing your question or use a larger model for better accuracy.
+A: Try rephrasing your question or switch to a different LLM API for better accuracy.
 
 ### System Requirements
 
 | Component | Minimum | Recommended |
 |-----------|---------|-------------|
-| RAM | 4GB | 8GB+ |
-| Storage | 5GB free | 10GB+ free |
+| RAM | 2GB | 4GB+ |
+| Storage | 1GB free | 2GB+ free |
 | CPU | Dual-core | Quad-core+ |
+| Internet | Broadband | High-speed |
 | OS | Windows 10, macOS 10.14, Ubuntu 18.04 | Latest versions |
 
 ## 🛣️ Roadmap
@@ -177,9 +157,9 @@ A: Try rephrasing your question or use a larger model for better accuracy.
 
 ### Future Releases
 - [ ] **Plugin System** - Extend functionality with custom modules
-- [ ] **Cloud Sync** - Optional encrypted cloud backup
+- [ ] **API Key Management** - Support for premium API tiers
 - [ ] **Collaboration** - Share insights with team members
-- [ ] **Mobile App** - iOS and Android companion apps
+- [ ] **Mobile Optimization** - Better mobile web experience
 
 ## 🤝 Contributing
 
@@ -192,9 +172,10 @@ We love contributions! Here's how you can help:
 3. Install development dependencies: `pip install -r requirements-dev.txt`
 4. Make your changes and add tests
 5. Run tests: `pytest tests/`
-6. Commit: `git commit -m 'Add amazing feature'`
-7. Push: `git push origin feature/amazing-feature`
-8. Open a Pull Request
+6. Test the Streamlit app: `streamlit run main.py`
+7. Commit: `git commit -m 'Add amazing feature'`
+8. Push: `git push origin feature/amazing-feature`
+9. Open a Pull Request
 
 ### Code Style
 
@@ -227,8 +208,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [GPT4All](https://gpt4all.io/) for providing excellent local AI capabilities
-- [Flet](https://flet.dev/) for the beautiful cross-platform UI framework
+- Free LLM API providers for making AI accessible to everyone
+- [Streamlit](https://streamlit.io/) for the excellent web framework
 - [PyMuPDF](https://pymupdf.readthedocs.io/) for robust PDF processing
 - The open-source community for continuous inspiration
 
@@ -240,6 +221,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 [🚀 Get Started](https://github.com/adawatia/PaperWise) • [📖 Documentation](https://github.com/adawatia/PaperWise/wiki) • [🐛 Report Bug](https://github.com/adawatia/PaperWise/issues) • [💡 Request Feature](https://github.com/adawatia/PaperWise/issues)
 
-*Built with ❤️ by [adawatia](https://github.com/adawatia)*
+*Built with ❤️ by [adawatia](https://github.com/adawatia) - A daily learner on the journey of improvement*
 
 </div>
