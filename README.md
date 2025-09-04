@@ -1,5 +1,8 @@
 # 📚 PaperWise - Intelligent  PDF Assistant
 
+> **Note:** This project is now archived and is no longer being actively maintained. The code is available for educational purposes, but no further updates or support will be provided.
+
+
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Latest-red.svg)](https://streamlit.io/)
